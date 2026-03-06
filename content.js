@@ -12,10 +12,10 @@ const content = {
             ]
         },
         hardSkills: [
-            { type: "DevOps", skills: ["Docker", "Docker Compose", "Bash", "Linux", "Virtualization", "Microservices", "CI/CD pipeline"] },
-            { type: "Monitoring", skills: ["Grafana", "Prometheus", "ELK Stack"] },
+            { type: "DevOps & Containerization", skills: ["Docker", "Docker Compose", "Kubernetes (K3s, K3d)", "ArgoCD", "GitLab CI/CD", "Bash", "Linux", "Virtualization", "Microservices", "CI/CD pipeline"] },
+            { type: "Monitoring & Observability", skills: ["Grafana", "Prometheus", "ELK Stack"] },
             { type: "Security", skills: ["SSL/TLS", "System & Network Security", "2FA", "Hashing", "Vault", "Tokens"] },
-            { type: "Scripting", skills: ["Bash"] }
+            { type: "Scripting & Automation", skills: ["Bash"] }
         ],
         projects_title: "Projects",
     },
@@ -32,10 +32,10 @@ const content = {
             ]
         },
         hardSkills: [
-            { type: "DevOps", skills: ["Docker", "Docker Compose", "Bash", "Linux", "Virtualisation", "Microservices", "Pipeline CI/CD"] },
-            { type: "Monitoring", skills: ["Grafana", "Prometheus", "ELK Stack"] },
+            { type: "DevOps & Conteneurisation", skills: ["Docker", "Docker Compose", "Kubernetes (K3s, K3d)", "ArgoCD", "GitLab CI/CD", "Bash", "Linux", "Virtualisation", "Microservices", "Pipeline CI/CD"] },
+            { type: "Monitoring & Observabilité", skills: ["Grafana", "Prometheus", "ELK Stack"] },
             { type: "Sécurité", skills: ["SSL/TLS", "Sécurité Système & Réseau", "2FA", "Hashing", "Vault", "Tokens"] },
-            { type: "Scripting", skills: ["Bash"] }
+            { type: "Scripting & Automatisation", skills: ["Bash"] }
         ],
         projects_title: "Projets",
     }
@@ -62,8 +62,52 @@ function showLang(lang) {
     });
 
     document.getElementById('projects').textContent = data.projects_title;
+    showProjects();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     showLang(currentLang);
 });
+
+const projects = [
+    {
+        title: "Inception",
+        repo: "https://github.com/Christellaa/Inception.git",
+        asset: "https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/inceptione.png",
+        asset_alt: "Inception Project Badge"
+    },
+    {
+        title: "Transcendence",
+        repo: "https://github.com/Christellaa/transcendence_42.git",
+        asset: "https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/ft_transcendencee.png",
+        asset_alt: "Transcendence Project Badge"
+    },
+    {
+        title: "Minishell",
+        repo: "https://github.com/Christellaa/Minishell.git",
+        asset: "https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/minishelle.png",
+        asset_alt: "Minishell Project Badge"
+    },
+    {
+        title: "Inception of Things",
+        repo: "https://github.com/Christellaa/InceptionOfThings.git",
+        asset: "assets/inception-of-things.png",
+        asset_alt: "Inception of Things Project Badge"
+    }
+]
+
+function showProjects() {
+    const projectsContainer = document.getElementById('projects-container');
+    projectsContainer.innerHTML = '';
+    projects.forEach(project => {
+        const projectElem = document.createElement('div');
+        projectElem.classList.add('project-card');
+        projectElem.innerHTML = `
+            <a href="${project.repo}">
+                <img src="${project.asset}" alt="${project.asset_alt}">
+                <br><strong>${project.title}</strong>
+            </a>
+        `;
+        projectsContainer.appendChild(projectElem);
+    });
+}

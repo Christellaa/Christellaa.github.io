@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="logo.webp" alt="Logo">
+        <img src="assets/logo.webp" alt="Logo">
         <div class="lang-buttons">
             <button onclick="showLang('en')">English</button>
             <button onclick="showLang('fr')">Français</button>
@@ -30,29 +30,7 @@
         </div>
 
         <h2 id="projects"></h2>
-        <div class="projects">
-            <div class="project-card">
-                <a href="https://github.com/Christellaa/Inception.git">
-                    <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/inceptione.png"
-                        alt="Inception badge">
-                    <br><strong>Inception</strong>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="https://github.com/Christellaa/transcendence_42.git">
-                    <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/ft_transcendencee.png"
-                        alt="Transcendence badge">
-                    <br><strong>Transcendence</strong>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="https://github.com/Christellaa/Minishell.git">
-                    <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/refs/heads/main/badges/minishelle.png"
-                        alt="Minishell badge">
-                    <br><strong>Minishell</strong>
-                </a>
-            </div>
-        </div>
+        <div id="projects-container" class="projects"></div>
 
         <div class="contact">
             <h2>Contact</h2>
