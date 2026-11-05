@@ -4,39 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christellaa's Portfolio</title>
-    <script src="content.js"></script>
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="description" content="Devops, Cloud, Networking and Cybersecurity portfolio.">
+
+    <title>Christella DE SOUSA | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="content.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <img src="assets/logo.webp" alt="Logo">
-        <div class="lang-buttons">
-            <button onclick="showLang('en')">English</button>
-            <button onclick="showLang('fr')">Français</button>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/logo.webp" alt="Logo">
+            <span>Christella DE SOUSA</span>
         </div>
+        <nav class="lang-buttons" aria-label="Language selection">
+            <button type="button" data-lang="en" class="active" aria-pressed="true">English</button>
+            <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+        </nav>
     </header>
 
-    <div class="container">
-        <h1 id="title"></h1>
-        <p id="desc"></p>
+    <main class="container">
 
-        <h2 id="about"></h2>
-        <p id="about-desc"></p>
+        <!-- Intro -->
+         <section class="intro">
+            <h1 id="intro-title"></h1>
+            <p id="intro-subtitle"></p>
 
-        <h2>Hard Skills</h2>
-        <div id="skills">
+            <div class="intro-meta">
+                <span id="intro-education"></span>
+            </div>
+         </section>
+
+         <!-- About -->
+          <section class="section about">
+            <h2 id="about-title"></h2>
+            <div id="about-desc"></div>
+          </section>
+
+          <!-- Skills -->
+           <section class="section">
+            <h2 id="skills-title"></h2>
+            <div id="skills-container" class="skills-grid"></div>
+           </section>
+
+           <!-- Projects -->
+            <section class="section">
+                <h2 id="projects-title"></h2>
+                <div id="projects-container" class="projects-grid"></div>
+            </section>
+
+            <!-- Certifications -->
+             <section class="section">
+                <h2 id="certif-title"></h2>
+                <div id="certif-container" class="certif-list"></div>
+             </section>
+    </main>
+
+    <footer class="footer">
+        <nav id="footer-links" class="footer-links" aria-label="External links"></nav>
+        <div class="footer-bottom">
+            <span>© 2026 Christella DE SOUSA</span>
         </div>
-
-        <h2 id="projects"></h2>
-        <div id="projects-container" class="projects"></div>
-
-        <div class="contact">
-            <h2>Contact</h2>
-            <p><a href="https://www.linkedin.com/in/christella-desousa">LinkedIn</a></p>
-        </div>
-    </div>
+    </footer>
 </body>
 
 </html>
